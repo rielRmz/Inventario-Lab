@@ -22,11 +22,11 @@
             @endif
             {!! Form::model($lab, ['route' => ['admin.labs.update', $lab], 'method' => 'put']) !!}
 
-            @include('admin.Laboratorios.modal.forms');
+            @include('admin.Laboratorios.modal.forms')
 
             <div class="row-3 mb-0">
                 <div class="col-md-8 offset-md-4">
-                    {!! Form::submit('Crear Categoria', ['class' => 'btn btn-outline-primary']) !!}
+                    {!! Form::submit('Actualizar Categoria', ['class' => 'btn btn-outline-primary']) !!}
                 </div>
             </div>
             {!! Form::close() !!}
@@ -35,13 +35,9 @@
 @stop
 
 @section('css')
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
 @section('js')
     <script> console.log('Hi!'); </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
 @stop
