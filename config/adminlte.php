@@ -317,7 +317,8 @@ return [
             'text' => 'Panel de Administrador',
             'can' => [
                 'admin.roles.index',
-                'profile.perfil.index'],
+                'profile.perfil.index',
+                'historial.home'],
             'submenu' => [
                 [
                     'text' => 'Listado de roles',
@@ -414,14 +415,13 @@ return [
         [
             'text' => 'Generador de Reportes',
             'can' => [
-                'admin.roles.index',
-                'profile.perfil.index'],
+                'report.reportes'],
             'submenu' => [
                 [
                     'text' => 'Generador de Reportes',
                     'route'  => 'admin.reportes.index',
                     'icon' => 'fas fa-solid fa-book',
-                    //'can' => 'admin.roles.index'
+                    'can' => 'report.reportes'
                 ]
             ]
         ],

@@ -74,7 +74,7 @@ class PermisoSeeder extends Seeder
         //USUARIO
         Permission::create(['name' => 'profile.perfil.index', 'description' => 'ver el listado de usuarios'])->syncRoles([$role1]);
         Permission::create(['name' => 'profile.perfil.assignRoles', 'description' => 'Asignar roles'])->syncRoles([$role1]);
-
+        Permission::create(['name' => 'profile.perfil.destroy', 'description' => 'Eliminar roles'])->syncRoles([$role1]);
         //EQUIPO COMPONENTE
         Permission::create(['name' => 'details.equipoComp.index', 'description' => 'ver el listado de detalles de equipo con componentes'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'details.equipoComp.create', 'description' => 'crear detalle de equipo con componentes'])->syncRoles([$role1, $role2]);
@@ -95,5 +95,13 @@ class PermisoSeeder extends Seeder
         Permission::create(['name' => 'details.labEquipo.create', 'description' => 'crear detalle de laboratorios con equipos'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'details.labEquipo.edit', 'description' => 'editar detalle de laboratorios con equipos'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'details.labEquipo.destroy', 'description' => 'eliminar detalle de  laboratorios con equipos'])->syncRoles([$role1, $role2]);
+        //HISTORIAL
+        Permission::create(['name' => 'historial.home', 'description' => 'ver la interfaz para ver el historial de cambios'])->syncRoles([$role1]);
+        //REPORTES
+        Permission::create(['name' => 'report.reportes', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1]);
+        Permission::create(['name' => 'report.equipoFull.pdf', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1]);
+        Permission::create(['name' => 'report.equipo.pdf', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1]);
+        Permission::create(['name' => 'report.labFull.pdf', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1]);
+        Permission::create(['name' => 'report.lab.pdf', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1]);
     }
 }

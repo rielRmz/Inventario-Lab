@@ -32,7 +32,9 @@
                         <th scope="col">Id</th>
                         <th scope="col">Nombre del Usuario</th>
                         <th scope="col">Correo Electronico</th>
-                        <th scope="col" colspan="2">Opciones</th>
+                        @canany(['profile.perfil.assignRoles','profile.perfil.destroy'])
+                            <th scope="col" colspan="2">Opciones</th>
+                        @endcanany
                     </tr>
                     </thead>
                     <tbody>
@@ -41,16 +43,21 @@
                             <td width="150" nowrap>{{ $user->id }}</td>
                             <td width="400">{{ $user->name }}</td>
                             <td width="400">{{ $user->email }}</td>
-                            <td width="150px">
-                                <a class="btn btn-outline-primary" href="{{ route('profile.perfil.assignRoles', $user->id) }}"
-                                   role="button">Asignar Roles</a>
-                            </td>
-                            <td width="100px">
-                                <a class="btn btn-outline-danger" data-toggle="modal"
-                                   data-target="#ModalDelete{{ $user->id }}">
-                                    Eliminar</a>
-                            </td>
-                            @include('profile.Perfil.modal.delete')
+                            @can('profile.perfil.assignRoles')
+                                <td width="150px">
+                                    <a class="btn btn-outline-primary"
+                                       href="{{ route('profile.perfil.assignRoles', $user->id) }}"
+                                       role="button">Asignar Roles</a>
+                                </td>
+                            @endcan
+                            @can('profile.perfil.destroy')
+                                <td width="100px">
+                                    <a class="btn btn-outline-danger" data-toggle="modal"
+                                       data-target="#ModalDelete{{ $user->id }}">
+                                        Eliminar</a>
+                                </td>
+                                @include('profile.Perfil.modal.delete')
+                            @endcan
                         </tr>
                     @endforeach
                     </tbody>

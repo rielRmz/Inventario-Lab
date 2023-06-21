@@ -2,17 +2,19 @@
 
 @section('title', 'Pantalla de Administrador')
 
-@section('content_header')
-    <div class="card">
-        <div class="card-header">
-            <h3>Detalles del Equipo</h3>
+@can('historial.home')
+    @section('content_header')
+        <div class="card">
+            <div class="card-header">
+                <h3>Detalles del Equipo</h3>
+            </div>
         </div>
-    </div>
-@stop
+    @stop
 
-@section('content')
-    <livewire:hisorial.index/>
-@stop
+    @section('content')
+        <livewire:hisorial.index/>
+    @stop
+@endcan
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
