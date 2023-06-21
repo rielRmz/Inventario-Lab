@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Reportes;
 
+use App\Models\Laboratorio;
+use App\Models\Marca;
 use Livewire\Component;
 
 class Index extends Component
@@ -10,6 +12,9 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.reportes.index');
+        $marcas = Marca::all();
+        $labs = Laboratorio::all();
+
+        return view('livewire.reportes.index',compact('marcas','labs'));
     }
 }
