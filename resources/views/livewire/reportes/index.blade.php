@@ -5,7 +5,7 @@
         <div class="card-header">
             <select wire:model="report" class="form-control">
                 <option value="" selected>Elije</option>
-                <optgroup label="-- Reportes de los Equipos --" size="10">
+                <optgroup label="-- Reportes de los Equipos --">
                     <option value="1">Reporte de todos los equipos disponibles</option>
                     <option value="2">Reporte de todos los equipos de la marca DELL</option>
                     <option value="3">Reporte de todos los equipos de la marca ACER</option>
@@ -15,6 +15,10 @@
                     <option value="7">Reporte de todos los equipos de la marca LENOVO</option>
                     <option value="8">Reporte de todos los equipos de la marca HP</option>
                 </optgroup>
+                <optgroup label="-- Reportes de los Laboratorios --">
+                    <option value="9">Reporte de todos los equipos disponibles</option>
+                </optgroup>
+
                 <optgroup label="-- Otras Opciones --">
 
                 </optgroup>
@@ -45,6 +49,9 @@
                     @break;
                 @case(8)
                     <a href="{{ route('report.equipo.pdf','7') }}" class="btn btn-outline-success">Generar Reporte</a>
+                    @break;
+                @case(9)
+                    <a href="{{ route('report.labFull.pdf') }}" class="btn btn-outline-success">Generar Reporte</a>
                     @break;
                 @default
                     <strong>
