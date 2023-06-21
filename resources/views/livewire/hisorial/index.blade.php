@@ -1,6 +1,4 @@
 <div>
-    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
-
     <div class="card">
         <div class="card-header">
             <select wire:model="category" class="form-control">
