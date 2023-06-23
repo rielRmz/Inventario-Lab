@@ -102,6 +102,6 @@ class PermisoSeeder extends Seeder
         Permission::create(['name' => 'report.equipoFull.pdf', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1]);
         Permission::create(['name' => 'report.equipo.pdf', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1]);
         Permission::create(['name' => 'report.labFull.pdf', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1]);
-        Permission::create(['name' => 'report.lab.pdf', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1]);
+        Permission::create(['name' => 'report.lab.pdf', 'description' => 'ver la interfaz para generar los reportes'])->syncRoles([$role1,$role2]);
     }
 }

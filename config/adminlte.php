@@ -421,7 +421,7 @@ return [
                     'text' => 'Generador de Reportes',
                     'route'  => 'admin.reportes.index',
                     'icon' => 'fas fa-solid fa-book',
-                    'can' => 'report.reportes'
+                    'can' => 'report.reportes',
                 ]
             ]
         ],
