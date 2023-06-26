@@ -37,7 +37,7 @@
                     @include('admin.Componentes.modal.forms')
 
                     <div class="row mb-3">
-                        <label for="marca_id" class="col-md-3 col-form-label">Marca del Componente</label>
+                        <label for="marca_id" class="col-md-3 col-form-label">Marca</label>
                         <div class="col">
                             <select id="marca_id" type="marca_id" class="form-control"
                                     name="marca_id" required>
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label for="estatus_id" class="col-md-3 col-form-label">Estado del Componente</label>
+                        <label for="estatus_id" class="col-md-3 col-form-label">Estado</label>
                         <div class="col">
                             <select id="estatus_id" type="estatus_id" class="form-control"
                                     name="estatus_id" required>
@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label for="tipoComponente_id" class="col-md-3 col-form-label">Categoria del Componente</label>
+                        <label for="tipoComponente_id" class="col-md-3 col-form-label">Categoria</label>
                         <div class="col">
                             <select id="tipoComponente_id" type="tipoComponente_id" class="form-control"
                                     name="tipoComponente_id" required>

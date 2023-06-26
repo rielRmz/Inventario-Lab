@@ -7,7 +7,7 @@
 </div>
 
 <div class="row mb-3">
-    {!! Form::label('laboratorio', 'Laboratorio', ['class' => 'col-md-3 col-form-label']) !!}
+    {!! Form::label('laboratorio', 'Descripción', ['class' => 'col-md-3 col-form-label']) !!}
 
     <div class="col">
         {!! Form::text('laboratorio', null, ['class' => 'form-control']) !!}

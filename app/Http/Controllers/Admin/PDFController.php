@@ -91,7 +91,7 @@ class PDFController extends Controller
             ->where('tcP.tipoComponente_id', '=', 'Proc')
             ->where('tcR.tipoComponente_id', '=', 'Mem_RAM')
             ->where('tcM.tipoComponente_id', '=', 'Monitor')
-            ->orderby('created_at', 'asc')
+            ->orderby('equipoLab_id', 'asc')
             ->get();
 
         $pdf = Pdf::loadView('admin.PDF.reporteLaboratorios', ['labs' => $labs]);
@@ -133,7 +133,7 @@ class PDFController extends Controller
             ->where('tcP.tipoComponente_id', '=', 'Proc')
             ->where('tcR.tipoComponente_id', '=', 'Mem_RAM')
             ->where('tcM.tipoComponente_id', '=', 'Monitor')
-            ->orderby('created_at', 'asc')
+            ->orderby('equipoLab_id', 'asc')
             ->get();
 
         $pdf = Pdf::loadView('admin.PDF.reporteLaboratorios', ['labs' => $labs]);

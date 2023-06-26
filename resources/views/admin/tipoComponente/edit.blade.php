@@ -4,7 +4,7 @@
 
 @can('admin.tipoComp.edit')
     @section('content_header')
-        <h1>Actualizar Categoria de Componentes</h1>
+        <h1>Editar Categoria</h1>
     @stop
 
     @section('content')

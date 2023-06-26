@@ -38,7 +38,7 @@
                     <thead>
                     <tr>
                         <th scope="col">Id de la Categoria</th>
-                        <th scope="col">Categoria</th>
+                        <th scope="col">Descripción</th>
                         @canany(['admin.tipoEquipo.edit','admin.tipoEquipo.destroy'])
                             <th scope="col" colspan="2">Opciones</th>
                         @endcanany

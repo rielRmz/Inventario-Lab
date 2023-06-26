@@ -4,7 +4,7 @@
 
 @can('admin.tipoEquipo.create')
     @section('content_header')
-        <h1>Nueva Categoria de Equipo</h1>
+        <h1>Nueva Categoria</h1>
     @stop
 
     @section('content')

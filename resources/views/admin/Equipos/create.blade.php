@@ -26,7 +26,7 @@
                 @include('admin.Equipos.modal.forms')
 
                     <div class="row mb-3">
-                        {!! Form::label('marca_id', 'Marca del equipo', ['class' => 'col-md-3 col-form-label']) !!}
+                        {!! Form::label('marca_id', 'Marca', ['class' => 'col-md-3 col-form-label']) !!}
 
                         <div class="col">
                             {!! Form::select('marca_id', $select2, null, ['class'=>'form-control']) !!}
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        {!! Form::label('estatus_id', 'Estado del equipo', ['class' => 'col-md-3 col-form-label']) !!}
+                        {!! Form::label('estatus_id', 'Estado', ['class' => 'col-md-3 col-form-label']) !!}
 
                         <div class="col">
                             {!! Form::select('estatus_id', $select3, null, ['class'=>'form-control']) !!}
@@ -42,7 +42,7 @@
                     </div>
 
                 <div class="row mb-3">
-                    {!! Form::label('tipoEquipo_id', 'Categoria de Equipos', ['class' => 'col-md-3 col-form-label']) !!}
+                    {!! Form::label('tipoEquipo_id', 'Categoria', ['class' => 'col-md-3 col-form-label']) !!}
 
                     <div class="col">
                         {!! Form::select('tipoEquipo_id', $select1    , null, ['class'=>'form-control']) !!}

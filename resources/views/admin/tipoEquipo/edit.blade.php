@@ -4,7 +4,7 @@
 
 @can('admin.tipoEquipo.edit')
     @section('content_header')
-        <h1>Actualizar Categoria de Equipo</h1>
+        <h1>Editar Categoria</h1>
     @stop
 
     @section('content')

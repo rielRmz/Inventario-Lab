@@ -40,7 +40,7 @@
                         <th scope="col">Numero de Serie</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Estatus</th>
-                        <th scope="col">Marca del Componente</th>
+                        <th scope="col">Marca</th>
                         <th scope="col">Categoria</th>
                         @canany(['admin.componente.edit','admin.componente.destroy'])
                             <th scope="col" colspan="2">Opciones</th>

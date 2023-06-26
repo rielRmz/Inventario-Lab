@@ -9,7 +9,7 @@
 </div>
 
 <div class="row mb-3">
-    {!! Form::label('tipoComponente', 'Categoria de Componentes', ['class' => 'col-md-3 col-form-label']) !!}
+    {!! Form::label('tipoComponente', 'Categoria', ['class' => 'col-md-3 col-form-label']) !!}
 
     <div class="col">
         {!! Form::text('tipoComponente', null, ['class' => 'form-control']) !!}

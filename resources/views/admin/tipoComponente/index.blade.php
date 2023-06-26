@@ -37,8 +37,8 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th scope="col">Id de la Categoria</th>
-                        <th scope="col">Categoria</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Descripción</th>
                         @canany(['admin.tipoComp.edit','admin.tipoComp.destroy'])
                             <th scope="col" colspan="2">Opciones</th>
                         @endcanany

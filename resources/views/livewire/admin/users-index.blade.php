@@ -31,7 +31,7 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Nombre del Usuario</th>
-                        <th scope="col">Correo Electronico</th>
+                        <th scope="col">Correo Electrónico</th>
                         @canany(['profile.perfil.assignRoles','profile.perfil.destroy'])
                             <th scope="col" colspan="2">Opciones</th>
                         @endcanany

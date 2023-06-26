@@ -8,7 +8,6 @@
             <a href="{{ route('admin.equipo.create') }}" class="btn btn-outline-success float-right">Nuevo
                 Equipo</a>
         @endcan
-        <a href="{{ route('admin.equipo.pdf') }}" class="btn btn-outline-success float-right">Generar Reporte</a>
         <h1>Listado de Equipos</h1>
     @stop
 

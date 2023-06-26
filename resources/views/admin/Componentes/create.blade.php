@@ -26,7 +26,7 @@
                 @include('admin.Componentes.modal.forms')
 
                 <div class="row mb-3">
-                    {!! Form::label('tipoComponente_id', 'Marca del Componente', ['class' => 'col-md-3 col-form-label']) !!}
+                    {!! Form::label('tipoComponente_id', 'Marca', ['class' => 'col-md-3 col-form-label']) !!}
 
                     <div class="col">
                         {!! Form::select('marca_id', $select2, null, ['class'=>'form-control']) !!}
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="row mb-3">
-                    {!! Form::label('tipoComponente_id', 'Estado del Componente', ['class' => 'col-md-3 col-form-label']) !!}
+                    {!! Form::label('tipoComponente_id', 'Estado', ['class' => 'col-md-3 col-form-label']) !!}
 
                     <div class="col">
                         {!! Form::select('estatus_id', $select3, null, ['class'=>'form-control']) !!}
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="row mb-3">
-                    {!! Form::label('tipoComponente_id', 'Categoria del Componente', ['class' => 'col-md-3 col-form-label']) !!}
+                    {!! Form::label('tipoComponente_id', 'Categoria', ['class' => 'col-md-3 col-form-label']) !!}
 
                     <div class="col">
                         {!! Form::select('tipoComponente_id', $select1, null, ['class'=>'form-control']) !!}

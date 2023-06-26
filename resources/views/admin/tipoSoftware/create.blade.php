@@ -4,7 +4,7 @@
 
 @can('admin.tipoSoft.create')
 @section('content_header')
-    <h1>Nueva Categoria de Software</h1>
+    <h1>Nueva Categoria</h1>
 @stop
 
 @section('content')

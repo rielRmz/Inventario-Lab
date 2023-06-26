@@ -4,7 +4,7 @@
 
 @can('admin.tipoComp.create')
     @section('content_header')
-        <h1>Nueva Categoria de Componentes</h1>
+        <h1>Nueva Categoria</h1>
     @stop
 
     @section('content')

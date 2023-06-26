@@ -39,7 +39,7 @@
                     <thead>
                     <tr>
                         <th scope="col">Id del laboratorio</th>
-                        <th scope="col">Laboratorios</th>
+                        <th scope="col">Descripción</th>
                         @canany(['admin.labs.edit','admin.labs.destroy','details.labEquipo.index'])
                         <th scope="col" colspan="3">Opciones</th>
                         @endcanany
