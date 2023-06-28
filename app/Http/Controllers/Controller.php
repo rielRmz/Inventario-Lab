@@ -10,10 +10,4 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    function imprimir()
-    {
-        $pdf = \PDF::loadView('pdf');
-        return $pdf->download('primerPDF');
-
-    }
 }

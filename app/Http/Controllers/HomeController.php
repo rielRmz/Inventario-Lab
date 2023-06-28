@@ -29,17 +29,5 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function profileUpdate(Request $request){
 
-        /*return Hash::make($request['name']);
-        //Hash::make(
-
-        $user =Auth::user();
-        $user->name = $request['name'];
-        $user->email = $request['email'];
-        $user->password = Hash::make($request['password']);
-        $user->save();
-
-        return back()->with('message','Profile Updated');*/
-    }
 }

@@ -5,10 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ComponenteRules;
 use App\Models\{Componente, Estatus, Marca, TipoComponente};
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use PhpParser\JsonDecoder;
-use Psy\Util\Json;
 
 class ComponenteController extends Controller
 {
