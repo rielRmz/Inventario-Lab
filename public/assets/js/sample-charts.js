@@ -1,10 +1,16 @@
 let sampleChartsClass;
 (function ($) {
     $(document).ready(function (){
-        var labels = Object.keys(Data);
-        var data = Object.values(Data);
-        const ctx = document.getElementById('myChart');
-        sampleChartsClass.ChartData(ctx, 'bar', labels, data)
+        var labelEq = Object.keys(Data1);
+        var dataEq = Object.values(Data1);
+        var labelLab = Object.keys(Data2);
+        var dataLab = Object.values(Data2);
+
+        const ctx = document.getElementById('myBarChart1');
+        sampleChartsClass.ChartData(ctx, 'bar', labelEq, dataEq)
+
+        const pieChart = document.getElementById('myBarChart2');
+        sampleChartsClass.ChartData(pieChart, 'bar', labelLab, dataLab)
     });
 
     sampleChartsClass = {
@@ -22,8 +28,7 @@ let sampleChartsClass;
                             'rgba(255, 205, 86, 0.6)',
                             'rgba(75, 192, 192, 0.6)',
                             'rgba(54, 162, 235, 0.6)',
-                            'rgba(153, 102, 255, 0.6)',
-                            'rgba(201, 203, 207, 0.6)'
+                            'rgba(153, 102, 255, 0.6)'
                         ],
                         borderColor: [
                             'rgb(255, 99, 132)',
@@ -31,8 +36,7 @@ let sampleChartsClass;
                             'rgb(255, 205, 86)',
                             'rgb(75, 192, 192)',
                             'rgb(54, 162, 235)',
-                            'rgb(153, 102, 255)',
-                            'rgb(201, 203, 207)'
+                            'rgb(153, 102, 255)'
                         ],
                         borderWidth: 1
                     }],
