@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <img src="{{ public_path('images/banner_top_itc.jpg') }}" alt="banner">
+            <img src="{{ public_path('assets/images/banner_top_itc.jpg') }}" alt="banner"  width="1024">
         </div>
         @if($labs->count())
             <div class="card-body">
