@@ -7,11 +7,11 @@
                 <option value="" selected>Elije</option>
                 <optgroup label="-- Reportes de los Equipos --">
                     <option value="1">Reporte de todos los equipos disponibles</option>
-                    <option value="2">Reporte de todos los equipos de la marca DELL</option>
+                    <option value="2">Reporte de todos los equipos correspondientes a una determinada Marca</option>
                 </optgroup>
                 <optgroup label="-- Reportes de los Laboratorios --">
                     <option value="3">Reporte de todos los equipos disponibles</option>
-                    <option value="4">Reporte de todos los equipos disponibles</option>
+                    <option value="4">Reporte de todos los equipos instalados en un determinado laboratorio</option>
                 </optgroup>
 
                 <optgroup label="-- Otras Opciones --">

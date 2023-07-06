@@ -11,30 +11,26 @@
                     <thead>
                     <tr>
                         <th scope="col">Identificador</th>
-                        <th scope="col">Sistema Operativo</th>
+                        <th scope="col">No Serie</th>
                         <th scope="col">Equipo</th>
-                        <th scope="col">Marca del Equipo</th>
+                        <th scope="col">Sistema Operativo</th>
                         <th scope="col">Procesador</th>
-                        <th scope="col">Marca</th>
                         <th scope="col">Monitor</th>
-                        <th scope="col">Marca</th>
                         <th scope="col">Memoria RAM</th>
-                        <th scope="col">Marca</th>
+                        <th scope="col">Almacenamiento</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($labs as $lab)
                         <tr>
                             <td>{{ $lab->equipoLab_id }}</td>
-                            <td>{{ $lab->SO }}</td>
+                            <td>{{ $lab->No_Serie }}</td>
                             <td>{{ $lab->descripcion }}</td>
-                            <td>{{ $lab->marca }}</td>
+                            <td>{{ $lab->SO }}</td>
                             <td>{{ $lab->proc }}</td>
-                            <td>{{ $lab->procM }}</td>
                             <td>{{ $lab->Ram }}</td>
-                            <td>{{ $lab->RamM }}</td>
                             <td>{{ $lab->Monitor }}</td>
-                            <td>{{ $lab->MonitorM }}</td>
+                            <td>{{ $lab->Almacenamiento }}</td>
                         </tr>
                     @endforeach
                     </tbody>

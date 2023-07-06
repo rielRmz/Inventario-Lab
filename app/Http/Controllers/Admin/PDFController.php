@@ -61,10 +61,9 @@ class PDFController extends Controller
     public function LaboratoriosFull()
     {
         //
-        $labs = Equipo::select('ehl.equipoLab_id','s.descripcion AS SO','equipos.*', 'm.descripcion AS marca',
+        $labs = Equipo::select('ehl.equipoLab_id','s.descripcion AS SO','equipos.*',
         'cP.descripcion AS proc','cR.descripcion AS Ram','cM.descripcion AS Monitor',
-        'mP.descripcion AS procM','mR.descripcion AS RamM','mM.descripcion AS MonitorM')
-            ->join('marcas AS m', 'equipos.marca_id', '=', 'm.id')
+            'cA.descripcion AS Almacenamiento')
             /*laboratorio*/
             ->join('equipo_has_laboratorios AS ehl', 'equipos.No_Serie', '=', 'ehl.No_Serie')
             ->join('laboratorios AS l', 'ehl.id_laboratorio', '=', 'l.id_laboratorio')
@@ -76,18 +75,20 @@ class PDFController extends Controller
             ->join('equipo_has_componentes AS ehcP', 'equipos.No_Serie', '=', 'ehcP.No_Serie')
             ->join('componentes AS cP', 'ehcP.Componente_id', '=', 'cP.No_Serie')
             ->join('tipo_componentes AS tcP', 'cP.tipoComponente_id', '=', 'tcP.tipoComponente_id')
-            ->join('marcas AS mP', 'cP.marca_id', '=', 'mP.id')
             /*mem-RAM*/
             ->join('equipo_has_componentes AS ehcR', 'equipos.No_Serie', '=', 'ehcR.No_Serie')
             ->join('componentes AS cR', 'ehcR.Componente_id', '=', 'cR.No_Serie')
             ->join('tipo_componentes AS tcR', 'cR.tipoComponente_id', '=', 'tcR.tipoComponente_id')
-            ->join('marcas AS mR', 'cR.marca_id', '=', 'mR.id')
             /*Monitor*/
             ->join('equipo_has_componentes AS ehcM', 'equipos.No_Serie', '=', 'ehcM.No_Serie')
             ->join('componentes AS cM', 'ehcM.Componente_id', '=', 'cM.No_Serie')
             ->join('tipo_componentes AS tcM', 'cM.tipoComponente_id', '=', 'tcM.tipoComponente_id')
-            ->join('marcas AS mM', 'cM.marca_id', '=', 'mM.id')
+            /*Almacenamiento*/
+            ->join('equipo_has_componentes AS ehcA', 'equipos.No_Serie', '=', 'ehcA.No_Serie')
+            ->join('componentes AS cA', 'ehcA.Componente_id', '=', 'cA.No_Serie')
+            ->join('tipo_componentes AS tcA', 'cA.tipoComponente_id', '=', 'tcA.tipoComponente_id')
             ->where('s.tipoSoftware_id', '=', 'Sis_Op')
+            ->where('tcA.tipoComponente_id','LIKE','%D')
             ->where('tcP.tipoComponente_id', '=', 'Proc')
             ->where('tcR.tipoComponente_id', '=', 'Mem_RAM')
             ->where('tcM.tipoComponente_id', '=', 'Monitor')
@@ -102,10 +103,9 @@ class PDFController extends Controller
     public function Laboratorios($lab)
     {
         //
-        $labs = Equipo::select('ehl.equipoLab_id','s.descripcion AS SO','equipos.*', 'm.descripcion AS marca',
-            'cP.descripcion AS proc','cR.descripcion AS Ram','cM.descripcion AS Monitor',
-            'mP.descripcion AS procM','mR.descripcion AS RamM','mM.descripcion AS MonitorM')
-            ->join('marcas AS m', 'equipos.marca_id', '=', 'm.id')
+        $labs = Equipo::select('ehl.equipoLab_id','s.descripcion AS SO','equipos.*',
+            'cP.descripcion AS proc','cR.descripcion AS Ram','cM.descripcion AS Monitor'
+            ,'cA.descripcion AS Almacenamiento')
             /*laboratorio*/
             ->join('equipo_has_laboratorios AS ehl', 'equipos.No_Serie', '=', 'ehl.No_Serie')
             ->join('laboratorios AS l', 'ehl.id_laboratorio', '=', 'l.id_laboratorio')
@@ -117,24 +117,27 @@ class PDFController extends Controller
             ->join('equipo_has_componentes AS ehcP', 'equipos.No_Serie', '=', 'ehcP.No_Serie')
             ->join('componentes AS cP', 'ehcP.Componente_id', '=', 'cP.No_Serie')
             ->join('tipo_componentes AS tcP', 'cP.tipoComponente_id', '=', 'tcP.tipoComponente_id')
-            ->join('marcas AS mP', 'cP.marca_id', '=', 'mP.id')
             /*mem-RAM*/
             ->join('equipo_has_componentes AS ehcR', 'equipos.No_Serie', '=', 'ehcR.No_Serie')
             ->join('componentes AS cR', 'ehcR.Componente_id', '=', 'cR.No_Serie')
             ->join('tipo_componentes AS tcR', 'cR.tipoComponente_id', '=', 'tcR.tipoComponente_id')
-            ->join('marcas AS mR', 'cR.marca_id', '=', 'mR.id')
             /*Monitor*/
             ->join('equipo_has_componentes AS ehcM', 'equipos.No_Serie', '=', 'ehcM.No_Serie')
             ->join('componentes AS cM', 'ehcM.Componente_id', '=', 'cM.No_Serie')
             ->join('tipo_componentes AS tcM', 'cM.tipoComponente_id', '=', 'tcM.tipoComponente_id')
-            ->join('marcas AS mM', 'cM.marca_id', '=', 'mM.id')
+            /*Almacenamiento*/
+            ->join('equipo_has_componentes AS ehcA', 'equipos.No_Serie', '=', 'ehcA.No_Serie')
+            ->join('componentes AS cA', 'ehcA.Componente_id', '=', 'cA.No_Serie')
+            ->join('tipo_componentes AS tcA', 'cA.tipoComponente_id', '=', 'tcA.tipoComponente_id')
             ->where('l.id_laboratorio', '=', $lab)
             ->where('s.tipoSoftware_id', '=', 'Sis_Op')
+            ->where('tcA.tipoComponente_id','LIKE','%D')
             ->where('tcP.tipoComponente_id', '=', 'Proc')
             ->where('tcR.tipoComponente_id', '=', 'Mem_RAM')
             ->where('tcM.tipoComponente_id', '=', 'Monitor')
             ->orderby('equipoLab_id', 'asc')
             ->get();
+
 
         $pdf = Pdf::loadView('admin.PDF.reporteLaboratorios', ['labs' => $labs]);
         $pdf->setPaper('A3','portrait');
