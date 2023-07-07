@@ -20,7 +20,7 @@ let sampleChartsClass;
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'My First Dataset',
+                        label: '',
                         data: data,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.6)',

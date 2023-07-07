@@ -38,7 +38,6 @@
 
                         <div class="col-md-4">
                             <p class="text-center">
-                                <strong>Goal Completion</strong>
                             </p>
                             @foreach($Equipos as $Equipo)
                                 <div class="progress-group">
@@ -85,9 +84,6 @@
                         </div>
 
                         <div class="col-md-4">
-                            <p class="text-center">
-                                <strong>Goal Completion</strong>
-                            </p>
                             @foreach($Labs as $Lab)
                                 <div class="progress-group">
                                     {{ $Lab->laboratorio }}

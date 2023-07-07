@@ -13,10 +13,6 @@
                     <option value="3">Reporte de todos los equipos disponibles</option>
                     <option value="4">Reporte de todos los equipos instalados en un determinado laboratorio</option>
                 </optgroup>
-
-                <optgroup label="-- Otras Opciones --">
-
-                </optgroup>
             </select>
         </div>
         <div class="card-body">
