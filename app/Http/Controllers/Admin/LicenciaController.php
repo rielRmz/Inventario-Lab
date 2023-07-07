@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LicenciaStoreRule;
+use App\Http\Requests\LicenciaUpdateRule;
 use App\Models\Licencia;
 
 class LicenciaController extends Controller
@@ -28,33 +30,51 @@ class LicenciaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ComponenteRules $request)
+    public function store(LicenciaStoreRule $request)
     {
+        $lic = new Licencia();
 
+        $lic->No_Serie = $request->No_Serie;
+        $lic->descripcion = $request->descripcion;
+        $lic->fecha_Activacion = $request->fecha_Activacion;
+        $lic->fecha_Caducacion = $request->fecha_Caducacion;
+
+        $lic->save();
+
+        return redirect()->route('admin.licencias.index')->with('message', 'Registro guardado exitosamente')->with('type', 'store');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Componente $comp)
+    public function edit(Licencia $lic)
     {
-
+        return view('admin.Licencias.edit', compact('lic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(ComponenteRules $request, Componente $comp)
+    public function update(LicenciaUpdateRule $request, Licencia $lic)
     {
+        $lic->No_Serie = $request->No_Serie;
+        $lic->descripcion = $request->descripcion;
+        $lic->fecha_Activacion = $request->fecha_Activacion;
+        $lic->fecha_Caducacion = $request->fecha_Caducacion;
 
+        $lic->save();
+
+        return redirect()->route('admin.licencias.index')->with('message','Registro actualizado exitosamente')->with('type','update');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Componente $comp)
+    public function destroy(Licencia $lic)
     {
+        $lic->delete();
 
+        return redirect()->route('admin.licencias.index')->with('message','Registro eliminado exitosamente')->with('type','destroy');
     }
 
 }

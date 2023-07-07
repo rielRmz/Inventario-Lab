@@ -71,6 +71,11 @@ class PermisoSeeder extends Seeder
         Permission::create(['name' => 'admin.status.create', 'description' => 'crear estatus'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'admin.status.edit', 'description' => 'editar estatus'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.status.destroy', 'description' => 'eliminar estatus'])->syncRoles([$role1]);
+        //Licencias
+        Permission::create(['name' => 'admin.licencias.index', 'description' => 'ver el listado de las licencias'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.licencias.create', 'description' => 'crear licencia'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.licencias.edit', 'description' => 'editar licencia'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.licencias.destroy', 'description' => 'eliminar licencia'])->syncRoles([$role1]);
         //USUARIO
         Permission::create(['name' => 'profile.perfil.index', 'description' => 'ver el listado de usuarios'])->syncRoles([$role1]);
         Permission::create(['name' => 'profile.perfil.assignRoles', 'description' => 'Asignar roles'])->syncRoles([$role1]);

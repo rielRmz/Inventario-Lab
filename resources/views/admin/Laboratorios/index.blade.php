@@ -4,7 +4,7 @@
 
 @can('admin.labs.index')
     @section('content_header')
-        @can('admin.labs.index')
+        @can('admin.labs.create')
             <a class="btn btn-outline-success float-right" href="{{ route('admin.labs.create') }}" role="button">Nueva Instancia</a>
         @endcan
         <h1>Listado de Instancias</h1>

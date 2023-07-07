@@ -24,8 +24,8 @@ class LicenciaStoreRule extends FormRequest
         return [
             //
             'No_Serie' => 'required',
-            'Software_id' => 'required',
-            'fecha_Instalacion' => 'required',
+            'descripcion' => 'required',
+            'fecha_Activacion' => 'required',
         ];
     }
 }
