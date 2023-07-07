@@ -1,38 +1,40 @@
 @extends('adminlte::page')
 
-@section('title', 'Laboratorios')
+@section('title', 'Nueva Instancias')
 
-@section('content_header')
-    <h1>Nuevo Laboratorio</h1>
-@stop
+@can('admin.labs.create')
+    @section('content_header')
+        <h1>Nueva Instancia</h1>
+    @stop
 
-@section('content')
-    <div class="card">
-        <div class="card-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>
-                                {{$error}}
-                            </li>
-                        @endforeach
-                    </ul>
+    @section('content')
+        <div class="card">
+            <div class="card-body">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>
+                                    {{$error}}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                {!! Form::open(['route' => 'admin.labs.store']) !!}
+
+                @include('admin.Laboratorios.modal.forms')
+
+                <div class="row-3 mb-0">
+                    <div class="col-md-8 offset-md-4">
+                        {!! Form::submit('Crear Instancia', ['class' => 'btn btn-outline-primary']) !!}
+                    </div>
                 </div>
-            @endif
-            {!! Form::open(['route' => 'admin.labs.store']) !!}
-
-            @include('admin.Laboratorios.modal.forms')
-
-            <div class="row-3 mb-0">
-                <div class="col-md-8 offset-md-4">
-                    {!! Form::submit('Crear Categoria', ['class' => 'btn btn-outline-primary']) !!}
-                </div>
+                {!! Form::close() !!}
             </div>
-            {!! Form::close() !!}
         </div>
-    </div>
-@stop
+    @stop
+@endcan
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">

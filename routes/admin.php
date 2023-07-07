@@ -4,6 +4,7 @@ use App\Http\{Controllers\Admin\ComponenteController,
     Controllers\Admin\EquipoController,
     Controllers\Admin\EstatusController,
     Controllers\Admin\LaboratorioController,
+    Controllers\Admin\LicenciaController,
     Controllers\Admin\MainController,
     Controllers\Admin\MarcaController,
     Controllers\Admin\PDFController,
@@ -100,7 +101,18 @@ Route::resource('software',SoftwareController::class)
 |--------------------------------------------------------------------------
 */
 Route::resource('componente',ComponenteController::class)
-    ->parameters(['componente'=>'comp'])->names('admin.componente');
+    ->parameters(['componente'=>'comp'])
+    ->names('admin.componente');
+/*
+|--------------------------------------------------------------------------
+| Rutas para el CRUD de Licencias
+|--------------------------------------------------------------------------
+| En este hacemos un llamado al controlador de Licencias para extraer informacion de este
+|--------------------------------------------------------------------------
+*/
+Route::resource('licencia',LicenciaController::class)
+    ->parameters(['licencia'=>'lic'])
+    ->names('admin.licencias');
 /*
 |--------------------------------------------------------------------------
 | Rutas para el CRUD de Equipos

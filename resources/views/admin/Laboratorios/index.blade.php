@@ -1,14 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Laboratorios')
+@section('title', 'Instancias')
 
 @can('admin.labs.index')
     @section('content_header')
         @can('admin.labs.index')
-            <a class="btn btn-outline-success float-right" href="{{ route('admin.labs.create') }}" role="button">Nuevo
-                Laboratorio</a>
+            <a class="btn btn-outline-success float-right" href="{{ route('admin.labs.create') }}" role="button">Nueva Instancia</a>
         @endcan
-        <h1>Listado de Laboratorios/Almacenes</h1>
+        <h1>Listado de Instancias</h1>
     @stop
 
     @section('content')

@@ -371,11 +371,19 @@ return [
                     'text' => 'Marcas',
                     'route'  => 'admin.marcas.index',
                     'icon' => 'fas fa-fw fa-user',
+                    'can' => 'admin.marcas.index'
                 ],
                 [
                     'text' => 'Estatus',
                     'route'  => 'admin.status.index',
                     'icon' => 'fas fa-fw fa-user',
+                    'can' => 'admin.status.index'
+                ],
+                [
+                    'text' => 'Licencias',
+                    'route'  => 'admin.licencias.index',
+                    'icon' => 'fas fa-fw fa-user',
+                    'can' => ''
                 ],
             ]
         ],
