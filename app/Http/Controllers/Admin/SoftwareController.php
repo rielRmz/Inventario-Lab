@@ -62,10 +62,12 @@ class SoftwareController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($Software_id)
     {
         //
+        return redirect()->route('details.licSoftware.index', $Software_id);
     }
+
 
     /**
      * Show the form for editing the specified resource.

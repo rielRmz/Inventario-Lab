@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Software')
+@section('title', 'Listado de Software')
 
 @can('admin.software.index')
     @section('content_header')
@@ -63,8 +63,15 @@
                                        data-target="#ModalDelete{{ $soft->Software_id }}">
                                         Eliminar</a>
                                 </td>
-                                @include('admin.Software.modal.delete')
                             @endcan
+                            @can('details.labEquipo.index')
+                                <td width="10px">
+                                    <a class="btn btn-outline-warning"
+                                       href="{{ route('details.licSoftware.index', $soft->Software_id) }}"
+                                       role="button">Licencias</a>
+                                </td>
+                            @endcan
+                            @include('admin.Software.modal.delete')
                         </tr>
                     @endforeach
                     </tbody>

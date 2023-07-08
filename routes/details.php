@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Detail\EquipoComponenteController;
-use App\Http\Controllers\Detail\EquipoLaboratorioController;
-use App\Http\Controllers\Detail\EquipoSoftwareController;
-use App\Http\Controllers\Detail\LaboratorioEquipoController;
-use App\Http\Controllers\Detail\MainController;
+use App\Http\{Controllers\Detail\EquipoComponenteController,
+    Controllers\Detail\EquipoLaboratorioController,
+    Controllers\Detail\EquipoSoftwareController,
+    Controllers\Detail\LaboratorioEquipoController,
+    Controllers\Detail\LicenciaSoftwareController,
+    Controllers\Detail\MainController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,4 +73,19 @@ Route::controller(LaboratorioEquipoController::class)->group(function (){
     Route::put('labEquipo/{labEquipo}','update')->name('details.labEquipo.update');
     Route::delete('labEquipo/{labEquipo}','destroy')->name('details.labEquipo.destroy');
     Route::get('labEquipo/{labEquipo}/edit','edit')->name('details.labEquipo.edit');
+});
+/*
+|--------------------------------------------------------------------------
+| Rutas para el CRUD de Detalle de Software
+|--------------------------------------------------------------------------
+| En este hacemos un llamado los controladores Software y Licencias para mostrar informacion de ambos controladores
+|--------------------------------------------------------------------------
+*/
+Route::controller(LicenciaSoftwareController::class)->group(function (){
+    Route::get('licSoftware/{licSoftware}/show','index')->name('details.licSoftware.index');
+    Route::post('licSoftware/','store')->name('details.licSoftware.store');
+    Route::get('licSoftware/{licSoftware}/create','create')->name('details.licSoftware.create');
+    Route::put('licSoftware/{licSoftware}','update')->name('details.licSoftware.update');
+    Route::delete('licSoftware/{licSoftware}','destroy')->name('details.licSoftware.destroy');
+    Route::get('licSoftware/{licSoftware}/edit','edit')->name('details.licSoftware.edit');
 });

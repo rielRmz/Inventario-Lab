@@ -67,8 +67,8 @@
                                        href="{{ route('details.labEquipo.index', $lab->id_laboratorio) }}"
                                        role="button">Detalles</a>
                                 </td>
-                                @include('admin.Laboratorios.modal.delete')
                             @endcan
+                            @include('admin.Laboratorios.modal.delete')
                         </tr>
                     @endforeach
                     </tbody>
