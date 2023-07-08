@@ -51,8 +51,7 @@
                     </div>
                 </div>
                 <div class=" row mb-3">
-                    <label for="fecha_Instalacion" class="col-md-3 col-form-label">Marca del
-                        Componente</label>
+                    <label for="fecha_Instalacion" class="col-md-3 col-form-label">Fecha de Instalación</label>
                     <div class="col-md-7">
                         <input id="fecha_Instalacion" type="date" class="form-control" name="fecha_Instalacion"
                                value="{{ old('fecha_Instalacion') }}" autocomplete="fecha_Instalacion">

@@ -1,8 +1,8 @@
 <!-- Modal -->
-<form action="{{ route('details.labEquipo.destroy', $labEquipo) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('details.labEquipo.destroy', $licSoftware) }}" method="POST" enctype="multipart/form-data">
     {{ method_field('delete') }}
     {{ csrf_field() }}
-    <div class="modal fade" id="ModalDelete{{ $labEquipo->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="ModalDelete{{ $licSoftware->id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -11,7 +11,7 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    Esta seguro de eliminar el registro seleccionado {{ $labEquipo->id }}.
+                    Esta seguro de eliminar el registro seleccionado {{ $licSoftware->id }}.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>

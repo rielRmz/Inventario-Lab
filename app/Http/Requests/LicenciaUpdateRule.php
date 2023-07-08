@@ -24,9 +24,8 @@ class LicenciaUpdateRule extends FormRequest
         return [
             //
             'No_Serie' => 'required',
-            'Software_id' => 'required',
+            'descripcion' => 'required',
             'fecha_Activacion' => 'required',
-            'fecha_Caducacion' => 'required',
         ];
     }
 }

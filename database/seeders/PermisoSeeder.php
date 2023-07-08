@@ -100,6 +100,11 @@ class PermisoSeeder extends Seeder
         Permission::create(['name' => 'details.labEquipo.create', 'description' => 'crear detalle de laboratorios con equipos'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'details.labEquipo.edit', 'description' => 'editar detalle de laboratorios con equipos'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'details.labEquipo.destroy', 'description' => 'eliminar detalle de  laboratorios con equipos'])->syncRoles([$role1, $role2]);
+        //LABORATORIO EQUIPO
+        Permission::create(['name' => 'details.licSoftware.index', 'description' => 'ver el listado de detalles de Software con Licencias'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'details.licSoftware.create', 'description' => 'crear detalle de Software con Licencias'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'details.licSoftware.edit', 'description' => 'editar detalle de Software con Licencias'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'details.licSoftware.destroy', 'description' => 'eliminar detalle de  Software con Licencias'])->syncRoles([$role1, $role2]);
         //HISTORIAL
         Permission::create(['name' => 'historial.home', 'description' => 'ver la interfaz para ver el historial de cambios'])->syncRoles([$role1]);
         //REPORTES

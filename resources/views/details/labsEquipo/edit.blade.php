@@ -55,8 +55,7 @@
                                 </div>
                             </div>
                             <div class=" row mb-3">
-                                <label for="fecha_Instalacion" class="col-md-3 col-form-label">Fecha de
-                                    Instalacion</label>
+                                <label for="fecha_Instalacion" class="col-md-3 col-form-label">Fecha de Instalacion</label>
                                 <div class="col-md-7">
                                     <input id="fecha_Instalacion" type="date" class="form-control"
                                            name="fecha_Instalacion"
@@ -65,8 +64,7 @@
                                 </div>
                             </div>
                             <div class=" row mb-3">
-                                <label for="fecha_Desnstalacion" class="col-md-3 col-form-label">Fecha de
-                                    DesInstalacion</label>
+                                <label for="fecha_Desnstalacion" class="col-md-3 col-form-label">Fecha de DesInstalacion</label>
                                 <div class="col-md-7">
                                     <input id="fecha_Desnstalacion" type="date" class="form-control"
                                            name="fecha_Desnstalacion"
