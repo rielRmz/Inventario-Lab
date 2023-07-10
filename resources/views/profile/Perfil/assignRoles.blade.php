@@ -26,10 +26,6 @@
         @endif
         <div class="card">
             <div class="card-body">
-                <p class="h5">Nombre: </p>
-                <p class="form-control">{{ $user->name }}</p>
-
-
                 <h2 class="h5">
                     Listado de roles
                 </h2>

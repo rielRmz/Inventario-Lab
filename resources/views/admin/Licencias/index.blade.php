@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Licencias')
+@section('title', 'Listado de Licencias')
 
 @can('admin.licencias.index')
     @section('content_header')

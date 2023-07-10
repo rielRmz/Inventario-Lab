@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Actualizar Licencia')
+@section('title', 'Licencia')
 
 @can('admin.licencias.edit')
     @section('content_header')

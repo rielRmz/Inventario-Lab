@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Categoria de Componentes')
+@section('title', 'Marcas')
 
 @can('admin.tipoComp.edit')
     @section('content_header')

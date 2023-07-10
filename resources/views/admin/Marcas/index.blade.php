@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Categoria de Componentes')
+@section('title', 'Listado de Marcas')
 
 @section('content_header')
     <a class="btn btn-outline-success float-right" href="{{ route('admin.marcas.create') }}" role="button">Nueva

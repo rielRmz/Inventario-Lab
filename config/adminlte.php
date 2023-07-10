@@ -309,12 +309,13 @@ return [
         [
             'text' => 'dashboard',
             'route'  => 'admin.home',
-            'icon'  => 'fas fa-solid fa-file',
+            'icon'  => 'fas fa-solid fa-home',
             'can'  => 'admin.home',
 
         ],
         [
             'text' => 'Panel de Administrador',
+            'icon' => 'fas fa-solid  fa-list-ol',
             'can' => [
                 'admin.roles.index',
                 'profile.perfil.index',
@@ -323,13 +324,13 @@ return [
                 [
                     'text' => 'Listado de roles',
                     'route'  => 'admin.roles.index',
-                    'icon' => 'fas fa-solid fa-book',
+                    'icon' => 'fas fa-solid fa-tags',
                     'can' => 'admin.roles.index'
                 ],
                 [
                     'text' => 'Listado de usuarios',
                     'route'  => 'profile.perfil.index',
-                    'icon' => 'fas fa-solid fa-user',
+                    'icon' => 'fas fa-solid fa-users',
                     'can'  => 'profile.perfil.index',
                 ],
                 [
@@ -342,6 +343,7 @@ return [
         ],
         [
             'text' => 'Catalogo de Materiales',
+            'icon' => 'fas fa-solid  fa-list-ol',
             'can' => [
                 'admin.tipoComp.index',
                 'admin.tipoEquipo.index',
@@ -352,43 +354,44 @@ return [
                 [
                     'text' => 'Catalogo de Componentes',
                     'route'  => 'admin.tipoComp.index',
-                    'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-solid fa-wrench',
                     'can' => 'admin.tipoComp.index',
                 ],
                 [
                     'text' => 'Catalogo de Equipos',
                     'route'  => 'admin.tipoEquipo.index',
-                    'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-solid fa-wrench',
                     'can' => 'admin.tipoEquipo.index',
                 ],
                 [
                     'text' => 'Catalogo de Software',
                     'route'  => 'admin.tipoSoft.index',
-                    'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-solid fa-wrench',
                     'can' => 'admin.tipoSoft.index',
                 ],
                 [
                     'text' => 'Marcas',
                     'route'  => 'admin.marcas.index',
-                    'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-solid fa-wrench',
                     'can' => 'admin.marcas.index'
                 ],
                 [
                     'text' => 'Estatus',
                     'route'  => 'admin.status.index',
-                    'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-solid fa-wrench',
                     'can' => 'admin.status.index'
                 ],
                 [
                     'text' => 'Licencias',
                     'route'  => 'admin.licencias.index',
-                    'icon' => 'fas fa-fw fa-user',
-                    'can' => ''
+                    'icon' => 'fas fa-solid fa-wrench',
+                    'can' => 'admin.licencias.index'
                 ],
             ]
         ],
         [
             'text' => 'Catalogo de Equipos',
+            'icon' => 'fas fa-solid  fa-list-ol',
             'can' => [
                 'admin.labs.index',
                 'admin.componente.index',
@@ -398,30 +401,32 @@ return [
                 [
                     'text' => 'Laboratorios',
                     'route'  => 'admin.labs.index',
-                    'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-fw fa-laptop  ',
                     'can' => 'admin.labs.index',
                 ],
                 [
                     'text' => 'Componentes',
                     'route'  => 'admin.componente.index',
-                    'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-solid  fa-tablet',
                     'can' => 'admin.componente.index',
                 ],
                 [
                     'text' => 'Equipos',
                     'route'  => 'admin.equipo.index',
+                    'icon' => 'fas fa-solid fa-desktop',
                     'can' => 'admin.equipo.index',
                 ],
                 [
                     'text' => 'Software',
                     'route'  => 'admin.software.index',
-                    'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-fw fa-users',
                     'can' => 'admin.software.index',
                 ]
             ]
         ],
         [
             'text' => 'Generador de Reportes',
+            'icon' => 'fas fa-solid  fa-list-ol',
             'can' => [
                 'report.reportes'],
             'submenu' => [
