@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Componente')
+@section('title', 'Componentes')
 
 @can('admin.componente.edit')
     @section('content_header')

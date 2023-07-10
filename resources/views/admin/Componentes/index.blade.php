@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Roles')
+@section('title', 'Componentes')
 
 @can('admin.componente.index')
     @section('content_header')
@@ -37,7 +37,7 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th scope="col">Numero de Serie</th>
+                        <th scope="col">Número de Serie</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Estatus</th>
                         <th scope="col">Marca</th>
