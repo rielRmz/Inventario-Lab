@@ -34,14 +34,22 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="Licencia_id" class="col-md-3 col-form-label">Equipo a Instalar</label>
-                        <div class="col-md-7">
-                            <select id="Licencia_id" type="text" class="form-control" name="Licencia_id">
-                                @foreach ($Licencias as $Licencia)
-                                    <option value="{{ $Licencia->No_Serie }}">
-                                        {{ $Licencia->No_Serie }}
+                        <label for="Licencia_id" class="col-md-3 col-form-label">Licencia a Instalar</label>
+                        <div class="col">
+                            <select id="Licencia_id" type="Licencia_id" class="form-control"
+                                    name="Licencia_id" required>
+                                <optgroup label="--Opcion Seleccionada--">
+                                    <option value="{{ $licSoftware->Licencia_id }}">
+                                        {{ $licSoftware->Licencia_id }}
                                     </option>
-                                @endforeach
+                                </optgroup>
+                                <optgroup label="--LIcencias Disponibles--">
+                                    @foreach ($Licencias as $Licencia)
+                                        <option value="{{ $Licencia->No_Serie }}">
+                                            {{ $Licencia->descripcion }}
+                                        </option>
+                                    @endforeach
+                                </optgroup>
                             </select>
                         </div>
                     </div>

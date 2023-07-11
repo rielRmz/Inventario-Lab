@@ -26,7 +26,7 @@ class EquiposIndex extends Component
             ->join('tipo_equipos AS te', 'equipos.tipoEquipo_id', '=', 'te.tipoEquipo_id')
             ->join('marcas AS m', 'equipos.marca_id', '=', 'm.id')
             ->join('estatus AS s', 'equipos.estatus_id', '=', 's.id')
-            ->where('No_Serie', 'LIKE', '%' . $this->search . '%')
+            ->where('equipos.No_Serie', 'LIKE', '%' . $this->search . '%')
             ->orwhere('m.descripcion', 'LIKE', '%' . $this->search . '%')
             ->orwhere('s.descripcion', 'LIKE', '%' . $this->search . '%')
             ->orderby('created_at','asc')

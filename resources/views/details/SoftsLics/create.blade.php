@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="Licencia_id" class="col-md-3 col-form-label">Equipo a Instalar</label>
+                        <label for="Licencia_id" class="col-md-3 col-form-label">Licencia a Instalar</label>
                         <div class="col-md-7">
                             <select id="Licencia_id" type="text" class="form-control" name="Licencia_id">
                                 @foreach ($Licencias as $Licencia)

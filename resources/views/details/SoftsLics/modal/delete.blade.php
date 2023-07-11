@@ -11,7 +11,7 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    Esta seguro de eliminar el registro seleccionado {{ $licSoftware->id }}.
+                    Esta seguro de eliminar el registro seleccionado {{ $licSoftware->Licencia_id }}.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>

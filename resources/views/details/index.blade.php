@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Pantalla de Administrador')
+@section('title', 'Detalles')
 
 @can('admin.equipo.show')
     @section('content_header')

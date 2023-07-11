@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Detalles')
 
 @can('details.labEquipo.index')
     @section('content_header')
@@ -39,10 +39,9 @@
                         <thead>
                         <tr>
                             <th scope="col">No de Serie del equipo</th>
-                            <th scope="col">laboratorio</th>
+                            <th scope="col">Identificador del equipo</th>
                             <th scope="col">Fecha de Instalacion</th>
                             <th scope="col">Fecha de Desinstalacion</th>
-                            <th scope="col">Identificador del equipo</th>
                             @canany(['details.labEquipo.edit','details.labEquipo.destroy'])
                                 <th scope="col" colspan="2">Opciones</th>
                             @endcanany
@@ -52,10 +51,9 @@
                         @foreach ($labEquipos as $labEquipo)
                             <tr>
                                 <td>{{ $labEquipo->No_Serie }}</td>
-                                <td>{{ $labEquipo->id_laboratorio }}</td>
+                                <td>{{ $labEquipo->equipoLab_id }}</td>
                                 <td>{{ $labEquipo->fecha_Instalacion }}</td>
                                 <td>{{ $labEquipo->fecha_Desnstalacion }}</td>
-                                <td>{{ $labEquipo->equipoLab_id }}</td>
                                 @can('details.labEquipo.edit')
                                     <td width="10px">
                                         <a class="btn btn-outline-info"
