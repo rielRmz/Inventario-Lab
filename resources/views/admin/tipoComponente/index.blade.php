@@ -5,8 +5,7 @@
 @can('admin.tipoComp.index')
     @section('content_header')
         @can('admin.tipoComp.create')
-            <a class="btn btn-outline-success float-right" href="{{ route('admin.tipoComp.create') }}" role="button">Nuevo
-                Componente</a>
+            <a class="btn btn-outline-success float-right" href="{{ route('admin.tipoComp.create') }}" role="button">Nueva Categoria</a>
         @endcan
         <h1>Listado de Categoria de Componentes</h1>
     @stop
@@ -50,16 +49,16 @@
                             <td class="align-middle">{{ $comp->tipoComponente_id }}</td>
                             <td class="align-middle">{{ $comp->tipoComponente }}</td>
                             @can('admin.tipoComp.edit')
-                                <td width="100px">
+                                <td width="190px">
                                     <a class="btn btn-outline-primary" href="{{ route('admin.tipoComp.edit', $comp) }}"
-                                       role="button">Actualizacion</a>
+                                       role="button">Actualizar Categoria</a>
                                 </td>
                             @endcan
                             @can('admin.tipoComp.destroy')
-                                <td width="100px">
+                                <td width="180px">
                                     <a class="btn btn-outline-danger" data-toggle="modal"
                                        data-target="#ModalDelete{{ $comp->tipoComponente_id }}">
-                                        Eliminar</a>
+                                        Eliminar Categoria</a>
                                 </td>
                                 @include('admin.tipoComponente.modal.delete')
                             @endcan

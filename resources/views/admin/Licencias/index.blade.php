@@ -54,15 +54,15 @@
                             <td class="align-middle">{{ $lic->fecha_Activacion }}</td>
                             <td class="align-middle">{{ $lic->fecha_Caducacion }}</td>
                             @can('admin.licencias.edit')
-                                <td width="5px">
+                                <td width="185px">
                                     <a class="btn btn-outline-primary" href="{{ route('admin.licencias.edit', $lic) }}"
-                                       role="button">Actualizacion</a>
+                                       role="button">Actualizar Licencia</a>
                             @endcan
                             @can('admin.licencias.destroy')
-                                <td width="5px">
+                                <td width="170px">
                                     <a class="btn btn-outline-danger" data-toggle="modal"
                                        data-target="#ModalDelete{{ $lic->No_Serie }}">
-                                        Eliminar</a>
+                                        Eliminar Licencia</a>
                                 </td>
                             @endcan
                             @include('admin.Licencias.modal.delete')

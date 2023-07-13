@@ -11,7 +11,8 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    Esta seguro de eliminar el registro seleccionado {{ $lic->No_Serie }}.
+                    Esta apunto de eliminar la licencia <b>{{ $lic->descripcion }}</b>, por lo tanto, todos los elementos relacionado a dicha licencia tambien seran eliminados.
+                    <br>¿Esta seguro de eliminar la licencia <b>{{ $lic->descripcion }}</b>?.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>

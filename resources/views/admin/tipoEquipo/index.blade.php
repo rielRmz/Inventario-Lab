@@ -5,10 +5,9 @@
 @can('admin.tipoEquipo.index')
     @section('content_header')
         @can('admin.tipoEquipo.create')
-            <a class="btn btn-outline-success float-right" href="{{ route('admin.tipoEquipo.create') }}" role="button">Nuevo
-                Equipo</a>
+            <a class="btn btn-outline-success float-right" href="{{ route('admin.tipoEquipo.create') }}" role="button">Nueva Categoria</a>
         @endcan
-        <h1>Listado de Categoria de Equipo</h1>
+        <h1>Listado de Categoria de Equipos</h1>
     @stop
 
     @section('content')
@@ -50,17 +49,17 @@
                             <td class="align-middle">{{ $equipo->tipoEquipo_id }}</td>
                             <td class="align-middle">{{ $equipo->tipoEquipo }}</td>
                             @can('admin.tipoEquipo.edit')
-                                <td width="100px">
+                                <td width="190px">
                                     <a class="btn btn-outline-primary"
                                        href="{{ route('admin.tipoEquipo.edit', $equipo) }}"
-                                       role="button">Actualizacion</a>
+                                       role="button">Actualizar Categoria</a>
                                 </td>
                             @endcan
                             @can('admin.tipoEquipo.destroy')
-                                <td width="100px">
+                                <td width="180px">
                                     <a class="btn btn-outline-danger" data-toggle="modal"
                                        data-target="#ModalDelete{{ $equipo->tipoEquipo_id }}">
-                                        Eliminar</a>
+                                        Eliminar Categoria</a>
                                 </td>
                                 @include('admin.tipoEquipo.modal.delete')
                             @endcan

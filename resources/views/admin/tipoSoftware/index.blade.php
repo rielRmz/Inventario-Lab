@@ -5,8 +5,7 @@
 @can('admin.tipoSoft.index')
     @section('content_header')
         @can('admin.tipoSoft.create')
-            <a class="btn btn-outline-success float-right" href="{{ route('admin.tipoSoft.create') }}" role="button">Nuevo
-                Software</a>
+            <a class="btn btn-outline-success float-right" href="{{ route('admin.tipoSoft.create') }}" role="button">Nueva Categoria</a>
         @endcan
         <h1>Listado de Categoria de Software</h1>
     @stop
@@ -50,16 +49,16 @@
                             <td class="align-middle">{{ $soft->tipoSoftware_id }}</td>
                             <td class="align-middle">{{ $soft->tipoSoftware }}</td>
                             @can('admin.tipoSoft.edit')
-                                <td width="100px">
+                                <td width="190px">
                                     <a class="btn btn-outline-primary" href="{{ route('admin.tipoSoft.edit', $soft) }}"
-                                       role="button">Actualizacion</a>
+                                       role="button">Actualizar Categoria</a>
                                 </td>
                             @endcan
                             @can('admin.tipoSoft.destroy')
-                                <td width="100px">
+                                <td width="180px">
                                     <a class="btn btn-outline-danger" data-toggle="modal"
                                        data-target="#ModalDelete{{ $soft->tipoSoftware_id }}">
-                                        Eliminar</a>
+                                        Eliminar Categoria</a>
                                 </td>
                                 @include('admin.tipoSoftware.modal.delete')
                             @endcan

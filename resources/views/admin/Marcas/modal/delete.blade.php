@@ -11,7 +11,8 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    Esta seguro de eliminar el registro seleccionado.
+                    Esta apunto de eliminar la marca <b>{{ $marca->descripcion }}</b>, por lo tanto, todos los elementos relacionado a dicha marca tambien seran eliminados.
+                    <br>¿Esta seguro de eliminar la marca <b>{{ $marca->descripcion }}</b>?.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>

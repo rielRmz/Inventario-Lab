@@ -44,14 +44,14 @@
                     <tr>
                         <td class="align-middle">{{ $marca-> id }}</td>
                         <td class="align-middle">{{ $marca->descripcion }}</td>
-                        <td width="100px">
+                        <td width="165px">
                             <a class="btn btn-outline-primary" href="{{ route('admin.marcas.edit', $marca) }}"
-                               role="button">Actualizacion</a>
+                               role="button">Actualizar Marca</a>
                         </td>
-                        <td width="100px">
+                        <td width="160px">
                             <a class="btn btn-outline-danger" data-toggle="modal"
                                data-target="#ModalDelete{{ $marca->id }}">
-                                Eliminar</a>
+                                Eliminar Marca</a>
                         </td>
                         @include('admin.Marcas.modal.delete')
                     </tr>

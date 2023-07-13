@@ -11,7 +11,8 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    Esta seguro de eliminar el registro seleccionado {{ $soft->tipoSoftware_id }}.
+                    Esta apunto de eliminar la Categoria <b>{{ $soft->tipoSoftware }}</b>, por lo tanto, todos los elementos relacionado a dicha categoria tambien seran eliminados.
+                    <br>¿Esta seguro de eliminar la Categoria <b>{{ $soft->tipoSoftware }}</b>?.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>

@@ -3,7 +3,7 @@
 @section('title', 'Listado de Estatus')
 
 @section('content_header')
-    <a class="btn btn-outline-success float-right" href="{{ route('admin.status.create') }}" role="button">Nueva
+    <a class="btn btn-outline-success float-right" href="{{ route('admin.status.create') }}" role="button">Nuevo
         Estatus</a>
     <h1>Listado de Estatus</h1>
 @stop
@@ -44,14 +44,14 @@
                     <tr>
                         <td class="align-middle">{{ $status-> id }}</td>
                         <td class="align-middle">{{ $status->descripcion }}</td>
-                        <td width="100px">
+                        <td width="170px">
                             <a class="btn btn-outline-primary" href="{{ route('admin.status.edit', $status) }}"
-                               role="button">Actualizacion</a>
+                               role="button">Actualizar Estatus</a>
                         </td>
-                        <td width="100px">
+                        <td width="170px">
                             <a class="btn btn-outline-danger" data-toggle="modal"
                                data-target="#ModalDelete{{ $status->id }}">
-                                Eliminar</a>
+                                Eliminar Estatus</a>
                         </td>
                         @include('admin.Estatus.modal.delete')
                     </tr>
