@@ -11,7 +11,8 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    Esta seguro de eliminar al rol {{ $role->name }}.
+                    Esta apunto de eliminar al rol {{ $role->name }}, por lo tanto, los usuario con dicho rol perderan de manera permanente los privilegios que este rol les otorgaba.
+                    <br>¿Esta seguro de eliminar el rol {{ $role->name }}?.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>

@@ -56,10 +56,10 @@
                                 </td>
                             @endcan
                             @can('admin.roles.destroy')
-                                <td width="20px">
+                                <td width="150px">
                                     <a class="btn btn-outline-danger" data-toggle="modal"
                                        data-target="#ModalDelete{{ $role->id }}"
-                                    >{{ __('Delete') }}</a>
+                                    >Eliminar Rol</a>
                                 </td>
                                 @include('admin.Roles.modal.delete')
                             @endcan

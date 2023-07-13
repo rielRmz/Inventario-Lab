@@ -44,17 +44,17 @@
                             <td width="400">{{ $user->name }}</td>
                             <td width="400">{{ $user->email }}</td>
                             @can('profile.perfil.assignRoles')
-                                <td width="150px">
+                                <td width="110px">
                                     <a class="btn btn-outline-primary"
                                        href="{{ route('profile.perfil.assignRoles', $user->id) }}"
                                        role="button">Asignar Roles</a>
                                 </td>
                             @endcan
                             @can('profile.perfil.destroy')
-                                <td width="100px">
+                                <td width="140px">
                                     <a class="btn btn-outline-danger" data-toggle="modal"
                                        data-target="#ModalDelete{{ $user->id }}">
-                                        Eliminar</a>
+                                        Eliminar Usuario</a>
                                 </td>
                                 @include('profile.Perfil.modal.delete')
                             @endcan

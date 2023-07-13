@@ -11,7 +11,8 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    Esta seguro de eliminar al usuario: {{ $user->name }}.
+                    Esta apunto de eliminar al rol {{ $user->name }}, por lo tanto, todos los combios registrados por el usuario tambien seran eliminadas.
+                    <br>¿Esta seguro de eliminar el rol {{ $user->name }}?.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
