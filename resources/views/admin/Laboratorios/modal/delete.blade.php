@@ -11,7 +11,8 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    Esta seguro de eliminar el registro seleccionado {{ $lab->id_laboratorio }}.
+                    Esta apunto de eliminar el Laboratorio <b>{{ $lab->laboratorio }}</b>, por lo tanto, todos los elementos relacionado a dicho laboratorio tambien seran eliminados.
+                    <br>¿Esta seguro de eliminar el Laboratorio <b>{{ $lab->laboratorio }}</b>?.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>

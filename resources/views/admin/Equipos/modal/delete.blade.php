@@ -12,7 +12,8 @@
                 </div>
                 <div class="modal-body">
                     <p>
-                        Al eliminar el equipo <b>{{ $equipo->No_Serie }}</b> se eliminaran todos los componetes y softwares relacionados con dicho equipo. ¿Esta seguro de eliminar el registro seleccionado <b>{{ $equipo->No_Serie }}</b>?.
+                        Esta apunto de eliminar el Equipo <b>{{ $equipo->No_Serie }}</b>, por lo tanto, todos los elementos relacionado a dicho equipo tambien seran eliminados.
+                        <br>¿Esta seguro de eliminar el Equipo <b>{{ $equipo->No_Serie }}</b>?.
                     </p>
                 </div>
                 <div class="modal-footer">
