@@ -22,5 +22,9 @@
 
 @section('js')
     @livewireScripts
-    <script> console.log('Hi!'); </script>
+    <script type="text/javascript">
+        window.livewire.on('EquipoDelete',() => {
+           $('#DeleteEquipo').modal('hide');
+        });
+    </script>
 @stop

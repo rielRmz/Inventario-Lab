@@ -34,4 +34,16 @@ class EquiposIndex extends Component
 
         return view('livewire.admin.equipos-index', compact('equipos'));
     }
+
+    public function delete(Equipo $equipo)
+    {
+        $data = Equipo::find($equipo->No_Serie);
+        $this->No_Serie = $data->No_Serie;
+    }
+
+    public function destroy()
+    {
+        Equipo::find($this->No_Serie)->delete();
+        $this->emit('EquipoDelete');
+    }
 }

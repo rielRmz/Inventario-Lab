@@ -1,4 +1,6 @@
 <div>
+    @include('livewire.DeleteEquipo')
+
     <div class="card">
         <div class="card-header">
             <input wire:model="search" class="form-control"
@@ -62,11 +64,9 @@
                             @endcan
                             @can('admin.equipo.destroy')
                                 <td width="10px">
-                                    <a class="btn btn-outline-danger" data-toggle="modal"
-                                       data-target="#ModalDelete{{ $equipo->No_Serie }}">
-                                        Eliminar</a>
-                                </td>
-                                @include('admin.Equipos.modal.delete')
+                                    <button data-toggle="modal" data-target="#DeleteEquipo"
+                                            class="btn btn-outline-danger" wire:click="delete({{ $equipo }})">Eliminar
+                                    </button>
                             @endcan
                         </tr>
                     @endforeach
