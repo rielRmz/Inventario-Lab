@@ -20,7 +20,7 @@
 
     <script type="text/javascript">
         window.livewire.on('UsuarioDelete',() => {
-           $('#UsuarioDelete').modal('hide');
+           $('#DeleteUsuario').modal('hide');
         });
     </script>
 @stop

@@ -38,6 +38,6 @@ class UsersIndex extends Component
     public function destroy()
     {
         User::find($this->No_Serie)->delete();
-        $this->emit('UserDelete');
+        $this->emit('UsuarioDelete');
     }
 }
