@@ -17,4 +17,10 @@
 
 @section('js')
     @livewireScripts
+
+    <script type="text/javascript">
+        window.livewire.on('EquipoDelete',() => {
+           $('#UserDelete').modal('hide');
+        });
+    </script>
 @stop

@@ -3,12 +3,10 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class   UsersIndex extends Component
+class UsersIndex extends Component
 {
     use WithPagination;
 
@@ -22,11 +20,24 @@ class   UsersIndex extends Component
 
     public function render()
     {
-        $users = DB::table('users')
+        $users = User::select('users.*')
             ->where('name', 'LIKE', '%' . $this->search . '%')
             ->orwhere('email', 'LIKE', '%' . $this->search . '%')
+            ->orderby('created_at', 'asc')
             ->paginate(10);
 
         return view('livewire.admin.users-index', compact('users'));
+    }
+
+    public function delete(User $user)
+    {
+        $data = User::find($user->id);
+        $this->No_Serie = $data->id;
+    }
+
+    public function destroy()
+    {
+        User::find($this->No_Serie)->delete();
+        $this->emit('UserDelete');
     }
 }

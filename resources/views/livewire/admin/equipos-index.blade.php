@@ -67,6 +67,7 @@
                                     <button data-toggle="modal" data-target="#DeleteEquipo"
                                             class="btn btn-outline-danger" wire:click="delete({{ $equipo }})">Eliminar
                                     </button>
+                                </td>
                             @endcan
                         </tr>
                     @endforeach
