@@ -9,9 +9,9 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <label>Esta apunto de eliminar el Equipo: <input wire:model="No_Serie" readonly/>, por lo tanto, todos los elementos
-                    relacionado a dicho equipo tambien seran eliminados.
-                    <br>¿Esta seguro de eliminar el Equipo <input wire:model="No_Serie" readonly/>?.
+                <label>Esta apunto de eliminar al usuario: <input wire:model="No_Serie" readonly/>, por lo tanto, todos los elementos
+                    relacionado a dicho usuario tambien seran eliminados.
+                    <br>¿Esta seguro de eliminar al usuario <input wire:model="No_Serie" readonly/>?.
                 </label>
 
             </div>
