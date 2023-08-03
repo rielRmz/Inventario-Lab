@@ -19,8 +19,8 @@
     @livewireScripts
 
     <script type="text/javascript">
-        window.livewire.on('EquipoDelete',() => {
-           $('#UserDelete').modal('hide');
+        window.livewire.on('UsuarioDelete',() => {
+           $('#UsuarioDelete').modal('hide');
         });
     </script>
 @stop
