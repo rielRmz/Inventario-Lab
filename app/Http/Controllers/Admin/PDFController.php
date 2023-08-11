@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Equipo;
+use App\Models\Laboratorio;
+use App\Models\Marca;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class PDFController extends Controller
 {
@@ -24,14 +27,19 @@ class PDFController extends Controller
     public function EquiposFull()
     {
         //
-        $equipos = Equipo::select('equipos.*', 'm.descripcion AS marca', 's.descripcion AS estatus', 'te.tipoEquipo')
-            ->join('tipo_equipos AS te', 'equipos.tipoEquipo_id', '=', 'te.tipoEquipo_id')
-            ->join('marcas AS m', 'equipos.marca_id', '=', 'm.id')
-            ->join('estatus AS s', 'equipos.estatus_id', '=', 's.id')
+        $date = Carbon::now();
+        $date = $date->format('d-M-Y');
+
+        $equipos = Equipo::select('equipos.*', 'm.descripcion AS marca', 's.descripcion AS estatus', 'te.tipoEquipo', 'l.laboratorio')
+            ->leftjoin('tipo_equipos AS te', 'equipos.tipoEquipo_id', '=', 'te.tipoEquipo_id')
+            ->leftjoin('marcas AS m', 'equipos.marca_id', '=', 'm.id')
+            ->leftjoin('estatus AS s', 'equipos.estatus_id', '=', 's.id')
+            ->leftjoin('equipo_has_laboratorios AS ehl', 'equipos.No_Serie', '=', 'ehl.No_Serie')
+            ->leftjoin('laboratorios AS l', 'ehl.id_laboratorio', '=', 'l.id_laboratorio')
             ->orderby('created_at', 'asc')
             ->get();
 
-        $pdf = Pdf::loadView('admin.PDF.reporteEquipo', ['equipos' => $equipos]);
+        $pdf = Pdf::loadView('admin.PDF.reporteEquipo', ['equipos' => $equipos, 'tipo' => 1, 'date' => $date]);
         $pdf->setPaper('A3','portrait');
         return $pdf->stream();
     }
@@ -42,15 +50,24 @@ class PDFController extends Controller
     public function Equipos($marca)
     {
         //
-        $equipos = Equipo::select('equipos.*', 'm.descripcion AS marca', 's.descripcion AS estatus', 'te.tipoEquipo')
-            ->join('tipo_equipos AS te', 'equipos.tipoEquipo_id', '=', 'te.tipoEquipo_id')
-            ->join('marcas AS m', 'equipos.marca_id', '=', 'm.id')
-            ->join('estatus AS s', 'equipos.estatus_id', '=', 's.id')
+        $date = Carbon::now();
+        $date = $date->format('d-M-Y');
+
+        $equipos = Equipo::select('equipos.*', 'm.descripcion AS marca', 's.descripcion AS estatus', 'te.tipoEquipo', 'l.laboratorio')
+            ->leftjoin('tipo_equipos AS te', 'equipos.tipoEquipo_id', '=', 'te.tipoEquipo_id')
+            ->leftjoin('marcas AS m', 'equipos.marca_id', '=', 'm.id')
+            ->leftjoin('estatus AS s', 'equipos.estatus_id', '=', 's.id')
+            ->leftjoin('equipo_has_laboratorios AS ehl', 'equipos.No_Serie', '=', 'ehl.No_Serie')
+            ->leftjoin('laboratorios AS l', 'ehl.id_laboratorio', '=', 'l.id_laboratorio')
             ->where('marca_id', '=', $marca)
             ->orderby('created_at', 'asc')
             ->get();
 
-        $pdf = Pdf::loadView('admin.PDF.reporteEquipo', ['equipos' => $equipos]);
+        $descripcion = Marca::Select('marcas.*')
+        ->where('id', '=', $marca)
+        ->get();
+
+        $pdf = Pdf::loadView('admin.PDF.reporteEquipo', ['equipos' => $equipos, 'tipo' => 2, 'marca' => $descripcion, 'date' => $date]);
         $pdf->setPaper('A3','portrait');
         return $pdf->stream();
     }
@@ -61,6 +78,9 @@ class PDFController extends Controller
     public function LaboratoriosFull()
     {
         //
+        $date = Carbon::now();
+        $date = $date->format('d-M-Y');
+
         $labs = Equipo::select('ehl.equipoLab_id','s.descripcion AS SO','equipos.*',
         'cP.descripcion AS proc','cR.descripcion AS Ram','cM.descripcion AS Monitor',
             'cA.descripcion AS Almacenamiento')
@@ -95,7 +115,7 @@ class PDFController extends Controller
             ->orderby('equipoLab_id', 'asc')
             ->get();
 
-        $pdf = Pdf::loadView('admin.PDF.reporteLaboratorios', ['labs' => $labs]);
+        $pdf = Pdf::loadView('admin.PDF.reporteLaboratorios', ['labs' => $labs, 'tipo' => 1, 'date' => $date]);
         $pdf->setPaper('A3','portrait');
         return $pdf->stream();
     }
@@ -103,6 +123,9 @@ class PDFController extends Controller
     public function Laboratorios($lab)
     {
         //
+        $date = Carbon::now();
+        $date = $date->format('d-M-Y');
+
         $labs = Equipo::select('ehl.equipoLab_id','s.descripcion AS SO','equipos.*',
             'cP.descripcion AS proc','cR.descripcion AS Ram','cM.descripcion AS Monitor'
             ,'cA.descripcion AS Almacenamiento')
@@ -138,8 +161,11 @@ class PDFController extends Controller
             ->orderby('equipoLab_id', 'asc')
             ->get();
 
+            $laboratorio = Laboratorio::Select('laboratorios.*')
+            ->where('id_laboratorio', '=', $lab)
+            ->get();
 
-        $pdf = Pdf::loadView('admin.PDF.reporteLaboratorios', ['labs' => $labs]);
+        $pdf = Pdf::loadView('admin.PDF.reporteLaboratorios', ['labs' => $labs, 'tipo' => 2, 'marca' => $laboratorio, 'date' => $date]);
         $pdf->setPaper('A3','portrait');
         return $pdf->stream();
     }
